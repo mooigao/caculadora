@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-sacale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie-edge">
+	<title>Calculadora en Spring Tool</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+	<script src="/js/jquery-3.6.0.min.css"></script>
+	<scrip src="js/popper.min.js"></scrip>
+	<script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="jumbotron">
+		<h1 class="display-4">Calculadora Basica</h1>
+		<p class="lead">
+			Ejemplo de Calculadora usando MVC con Spring
+		</p>
+		<hr class="my-4">
+		<p>Introduce los numero para la operacion a realizar</p>
+		<div>
+		<form action="#" th:action="@{/resultado}" th:object="${calcu}" method="post">
+			<p>PRIMER NUMERO:</p><input type="number" th:field="*{num1}" class="form-control"/></p>
+			<p>SEGUNDO NUMERO:</p><input type="number" th:field="*{num2}" class="form-control"/></p>
+			<p>
+			Operacion:
+				<select th:field="*{operador}" class="form-control">
+					<option value="+">Suma (+)</option>
+					<option value="-">Resta (-)</option>
+					<option value="*">Multiplicacion (*)</option>
+					<option value="/">Division (/)</option>
+				</select>
+			</p>
+			<p>
+			<label th:text="'Resultado de' + *{num1} + *{operador} + *{num2} + ' = ' + *{resultado}"></label>
+			<p><input type="submit" value="Calcular"/> <input type="reset" value="limpiar" /></p>
+		</form>
+	</div>
+	<hr class="my-4">
+	<div>
+		<div class="row">
+			<div class="col-2"> </div>
+			<div class="col-8">
+				<p>Desarrollo de Aplicaciones Web. Moises Gaona Oropeza. 18/Mayo/2022</p>
+				<p>ITSSNP 2022</p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
